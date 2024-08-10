@@ -36,4 +36,3 @@ qmk compile
 qmk flash
 ```
 
-
