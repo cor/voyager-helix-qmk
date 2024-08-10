@@ -136,6 +136,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_2:
     if (record->event.pressed) {
       SEND_STRING(SS_LCTL(SS_TAP(X_E)) SS_DELAY(100) SS_TAP(X_ENTER));
+      layer_move(0);
+      return false; // prevents the character from layer-0 from being pressed
     }
     break;
     case ST_MACRO_3:
