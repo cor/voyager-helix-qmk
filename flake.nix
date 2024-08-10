@@ -15,7 +15,7 @@
       ];
       perSystem = { config, pkgs, ... }: {
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [ nixd nixpkgs-fmt cmake-language-server ];
+          buildInputs = with pkgs; [ qmk nixd nixpkgs-fmt cmake-language-server ];
         };
       };
     };
