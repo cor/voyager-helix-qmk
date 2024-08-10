@@ -146,8 +146,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_2:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_BSPC));
-      layer_move(0);
-      return false; // prevents the character from layer-0 from being pressed
     }
     break;
     case ST_MACRO_3:
@@ -174,6 +172,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_6:
     if (record->event.pressed) {
       SEND_STRING(SS_LGUI(SS_TAP(X_X)));
+      layer_move(2);
+      return false; // prevents the character from layer-0 from being pressed
     }
     break;
     case ST_MACRO_7:
